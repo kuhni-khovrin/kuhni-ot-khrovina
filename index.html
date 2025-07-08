@@ -3,39 +3,75 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Кухни от Ховрина</title>
   <style>
-    body { font-family: Arial; margin: 0; padding: 0; }
-    header { background: #f2f2f2; padding: 50px 20px; text-align: center; }
-    h1 { margin-bottom: 10px; }
-    .btn { background: black; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; }
-    section { padding: 40px 20px; max-width: 900px; margin: auto; }
-    .style-box { border: 1px solid #ddd; padding: 20px; margin-bottom: 20px; }
+    body { margin: 0; font-family: 'Segoe UI', sans-serif; color: #222; background: #fff; }
+    header { background: #111; color: #fff; padding: 60px 20px; text-align: center; }
+    header h1 { font-size: 42px; margin-bottom: 10px; }
+    header p { font-size: 20px; opacity: 0.8; }
+    .btn { display: inline-block; margin-top: 20px; background: #fff; color: #111; padding: 12px 28px; border: none; border-radius: 4px; text-decoration: none; font-weight: bold; }
+    section { padding: 60px 20px; max-width: 1200px; margin: auto; }
+    h2 { font-size: 32px; margin-bottom: 20px; text-align: center; }
+    .grid { display: grid; gap: 30px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+    .card { border: 1px solid #ddd; border-radius: 8px; overflow: hidden; background: #fafafa; }
+    .card img { width: 100%; height: auto; display: block; }
+    .card-content { padding: 20px; }
+    .card-content h3 { margin-top: 0; font-size: 20px; }
+    form { max-width: 600px; margin: auto; display: flex; flex-direction: column; gap: 15px; }
+    input, textarea { padding: 12px; font-size: 16px; border: 1px solid #ccc; border-radius: 4px; }
+    button { padding: 12px; background: #111; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; }
+    footer { text-align: center; background: #111; color: #fff; padding: 30px 20px; font-size: 14px; }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Кухни от Ховрина</h1>
-    <p>Кухни на заказ: модерн, классика, лофт</p>
-    <a href="#form" class="btn">Рассчитать стоимость</a>
-  </header>
 
-  <section>
-    <h2>Стили кухонь</h2>
-    <div class="style-box"><strong>Модерн:</strong> минимализм, гладкие фасады, встроенные ручки</div>
-    <div class="style-box"><strong>Лофт:</strong> бетон, металл, дерево и индустриальные элементы</div>
-    <div class="style-box"><strong>Классика:</strong> рамочные фасады, светлая палитра, декор</div>
-  </section>
+<header>
+  <h1>Кухни от Ховрина</h1>
+  <p>Изготовление кухонь на заказ в стиле модерн, лофт, классика</p>
+  <a href="#form" class="btn">Оставить заявку</a>
+</header>
 
-  <section id="form">
-    <h2>Оставить заявку</h2>
-    <form>
-      <input type="text" placeholder="Ваше имя" style="width:100%;padding:10px;margin-bottom:10px" />
-      <input type="tel" placeholder="Телефон" style="width:100%;padding:10px;margin-bottom:10px" />
-      <textarea placeholder="Комментарий" style="width:100%;padding:10px;height:100px;"></textarea><br/>
-      <button type="submit" class="btn">Отправить</button>
-    </form>
-  </section>
+<section>
+  <h2>Стили кухонь</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://mebelvdomufa.ru/wp-content/uploads/2022/11/kuhnya-2023-6.jpg" alt="Модерн">
+      <div class="card-content">
+        <h3>Модерн</h3>
+        <p>Современный стиль: лаконичные линии, минимализм, функциональность.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://cdn21vek.by/img/galleries/7989/preview_b/kuhni_v_stile_loft.jpg" alt="Лофт">
+      <div class="card-content">
+        <h3>Лофт</h3>
+        <p>Металл, дерево и индустриальный стиль — для свободных и смелых решений.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://www.kuhni-nsk.ru/upload/iblock/1e5/1e5705f3d5a2d364e03b017a9fbb05fb.jpg" alt="Классика">
+      <div class="card-content">
+        <h3>Классика</h3>
+        <p>Элегантность, фрезеровка, светлые фасады. Стиль, проверенный временем.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Оставьте заявку</h2>
+  <form id="form">
+    <input type="text" placeholder="Ваше имя" required>
+    <input type="tel" placeholder="Телефон для связи" required>
+    <textarea placeholder="Опишите желаемую кухню (размер, стиль, цвет)" rows="4"></textarea>
+    <button type="submit">Отправить</button>
+  </form>
+</section>
+
+<footer>
+  © 2025 Кухни от Ховрина — кухни под заказ. Все права защищены.
+</footer>
+
 </body>
 </html>
