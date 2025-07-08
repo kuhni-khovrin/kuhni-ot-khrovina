@@ -5,181 +5,97 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Кухни от Ховрина</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
-      background: #0d0f14;
+      background-color: #0e0e0e;
       color: #fff;
-      line-height: 1.6;
+      scroll-behavior: smooth;
     }
     header {
+      background-color: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
       position: fixed;
-      top: 0;
       width: 100%;
-      background: #111;
-      padding: 1rem 2rem;
+      z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 1000;
-      box-shadow: 0 2px 4px #0009;
+      padding: 15px 30px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
-    nav a {
-      margin-left: 20px;
-      color: white;
+    header a {
+      color: #fff;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      margin: 0 15px;
+      transition: color 0.3s;
+    }
+    header a:hover {
+      color: #f50057;
     }
     .hero {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0,0,0,0.9)), url('background.jpg');
+      background-size: cover;
+      background-position: center;
       height: 100vh;
-      background: url('https://di-nero.ru/media/img/pages/main/slider/slider-1.webp') center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-direction: column;
       text-align: center;
+      padding: 0 20px;
     }
     .hero h1 {
-      font-size: 3rem;
-      background: rgba(0,0,0,0.5);
-      padding: 20px;
-      border-radius: 12px;
+      font-size: 48px;
+      margin: 0;
+      color: #fff;
     }
-    section {
-      padding: 80px 20px;
-      max-width: 1000px;
-      margin: auto;
+    .hero p {
+      font-size: 18px;
+      max-width: 600px;
+      color: #ddd;
+      margin-top: 20px;
     }
-    h2 {
-      color: #e30049;
-      margin-bottom: 20px;
-    }
-    .steps, .stats, .why, .designers, .form, .footer {
-      display: grid;
-      gap: 20px;
-    }
-    .steps div, .stats div, .why div, .designers div {
-      background: #1a1d23;
-      padding: 20px;
-      border-radius: 8px;
-    }
-    .cta {
-      text-align: center;
-      background: #222;
-      padding: 40px 20px;
-      border-radius: 8px;
-      margin-top: 40px;
-    }
-    .cta button {
-      padding: 10px 20px;
-      background: #e30049;
-      color: white;
+    .button-main {
+      margin-top: 30px;
+      padding: 12px 30px;
+      background-color: #f50057;
+      color: #fff;
       border: none;
-      border-radius: 4px;
+      border-radius: 25px;
+      font-weight: 600;
       font-size: 16px;
       cursor: pointer;
+      transition: background 0.3s;
     }
-    .form input, .form button {
-      padding: 10px;
-      width: 100%;
-      margin-bottom: 10px;
-      border: none;
-      border-radius: 6px;
-    }
-    .form button {
-      background: #e30049;
-      color: white;
-      font-weight: bold;
-    }
-    .footer {
-      text-align: center;
-      font-size: 14px;
-      padding-bottom: 60px;
+    .button-main:hover {
+      background-color: #d4004a;
     }
   </style>
 </head>
 <body>
   <header>
-    <div><strong>Кухни от Ховрина</strong></div>
+    <div style="font-size: 20px; font-weight: bold; color: #f50057; cursor: pointer;" onclick="location.href='index.html'">Кухни от Ховрина</div>
     <nav>
-      <a href="#">Мебель</a>
-      <a href="#">Акции</a>
-      <a href="#">Гарантия</a>
-      <a href="#">Отзывы</a>
-      <a href="#">О нас</a>
-      <a href="#">Оплата</a>
-      <a href="#">Контакты</a>
+      <a href="#mebel">Мебель</a>
+      <a href="#akcii">Акции</a>
+      <a href="#garantiya">Гарантия</a>
+      <a href="#otzyvy">Отзывы</a>
+      <a href="#onas">О нас</a>
+      <a href="#oplata">Оплата</a>
+      <a href="#kontakty">Контакты</a>
     </nav>
   </header>
 
-  <div class="hero">
+  <section class="hero">
     <h1>Качество и стиль вашего интерьера</h1>
-  </div>
-
-  <section>
-    <h2>Собственная мебельная фабрика</h2>
-    <p>Оптимизация процессов, отсутствие шоурумов и работа без подрядчиков позволяют удерживать низкие цены при высоком качестве.</p>
+    <p>Собственная мебельная фабрика позволяет быть уверенными в качестве мебели. Оптимизация производственных процессов, отсутствие шоу-румов и работа в одном регионе без подрядчиков помогает удерживать цены ниже средних.</p>
+    <button class="button-main">Вызвать дизайнера</button>
   </section>
 
-  <section class="steps">
-    <h2>Три простых шага</h2>
-    <div>1. Бесплатный выезд дизайнера и замер кухни. Изучаем планировку и ваши пожелания.</div>
-    <div>2. Подготовка дизайн-проекта с 3D визуализацией и подбором материалов.</div>
-    <div>3. Изготовление, доставка и монтаж от 14 дней.</div>
-  </section>
-
-  <section class="cta">
-    <h2>Давайте создавать вместе</h2>
-    <p>Сложность проекта всегда нивелируется ответственным подходом и вниманием к деталям.</p>
-    <button>Вызвать дизайнера</button>
-  </section>
-
-  <section class="stats">
-    <h2>Цифры о нас</h2>
-    <div>100% реализация идей клиента</div>
-    <div>60% Скидки на продукцию</div>
-    <div>Минимальный срок — от 14 дней</div>
-  </section>
-
-  <section>
-    <h2>Наши эскизы</h2>
-    <p>Галерея кухонь будет добавлена здесь.</p>
-  </section>
-
-  <section class="why">
-    <h2>Почему выбирают нас</h2>
-    <div>Собственное производство</div>
-    <div>Выбор цвета и материалов на дому</div>
-    <div>Бесплатный выезд дизайнера</div>
-    <div>3D проект бесплатно</div>
-    <div>Официальный договор</div>
-    <div>Гарантия 2 года</div>
-  </section>
-
-  <section class="designers">
-    <h2>Знакомьтесь с дизайнерами</h2>
-    <div>Денис, Арсений, Андрей, Диомид</div>
-    <div>Павел, Тигран, Кирилл, Сергей, Владислав</div>
-  </section>
-
-  <section>
-    <h2>Наши партнёры</h2>
-    <p>Мы используем фурнитуру ведущих производителей для гарантии качества.</p>
-  </section>
-
-  <section class="form">
-    <h2>Заказать обратный звонок</h2>
-    <input type="text" placeholder="Имя" />
-    <input type="tel" placeholder="Телефон" />
-    <button>Отправить</button>
-    <p>Отправляя данные, вы соглашаетесь на их обработку.</p>
-  </section>
-
-  <section class="footer">
-    <p>Мы на связи: TG | VK | OK | info@di-nero.ru | +7 495 085-75-74</p>
-    <p>Информация не является публичной офертой © 2025 Кухни от Ховрина</p>
-    <p>Политика конфиденциальности | Публичная оферта | Оплата на сайте</p>
-  </section>
+  <!-- Остальной контент сайта идёт ниже -->
 </body>
 </html>
