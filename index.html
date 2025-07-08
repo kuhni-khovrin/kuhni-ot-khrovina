@@ -2,106 +2,138 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кухни от Ховрина</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #111;
-            color: #fff;
-        }
-        header {
-            background-color: #000;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #e6003d;
-        }
-        .logo {
-            font-size: 20px;
-            font-weight: bold;
-            color: #e6003d;
-        }
-        nav a {
-            margin-left: 20px;
-            text-decoration: none;
-            color: #fff;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #e6003d;
-        }
-        section {
-            display: none;
-            padding: 50px 20px;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        section.active {
-            display: block;
-        }
-        h2 {
-            color: #e6003d;
-        }
-        @keyframes fadeIn {
-            from {opacity: 0; transform: translateY(20px);}
-            to {opacity: 1; transform: translateY(0);}
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Кухни от Ховрина</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Montserrat', sans-serif; background: #0d0f14; color: #fff; }
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 40px; background: #0d0f14; position: fixed;
+      width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid #fff2;
+    }
+    header h1 { color: #e30049; cursor: pointer; }
+    nav a {
+      color: #fff; margin-left: 20px; text-decoration: none;
+      font-weight: bold; position: relative;
+    }
+    nav a.active::after {
+      content: ''; position: absolute; width: 100%; height: 2px;
+      background: #e30049; left: 0; bottom: -5px;
+    }
+    section {
+      min-height: 100vh; padding: 100px 40px 60px;
+      display: none; opacity: 0; transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    section.active {
+      display: block; opacity: 1; transform: translateY(0);
+    }
+    .hero {
+      background: url('https://di-nero.ru/media/img/pages/main/slider/slider-1.webp') center/cover no-repeat;
+      min-height: 100vh; display: flex; justify-content: center;
+      align-items: center; text-align: center;
+    }
+    .hero h2 {
+      font-size: 48px; background: rgba(0, 0, 0, 0.5);
+      padding: 20px; border-radius: 12px;
+    }
+    .designer-btn, .floating-contact {
+      position: fixed; z-index: 2000; background: #e30049; color: white;
+      border: none; border-radius: 50px; padding: 12px 20px;
+      font-weight: bold; cursor: pointer;
+    }
+    .designer-btn { bottom: 90px; right: 20px; }
+    .floating-contact { bottom: 20px; right: 20px; font-size: 20px; border-radius: 100px; }
+    .designer-form {
+      display: none; position: fixed; bottom: 110px; right: 20px;
+      background: #222; padding: 20px; border-radius: 12px; width: 300px;
+      z-index: 2001;
+    }
+    .designer-form input, .designer-form textarea {
+      width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 6px; border: none;
+    }
+    .designer-form button {
+      width: 100%; padding: 10px; background: #e30049; color: white; border: none;
+      border-radius: 6px; font-weight: bold; cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="logo">Кухни от Ховрина</div>
-        <nav>
-            <a href="#" onclick="showSection('mebel')">МЕБЕЛЬ</a>
-            <a href="#" onclick="showSection('akcii')">АКЦИИ</a>
-            <a href="#" onclick="showSection('garantiya')">ГАРАНТИЯ</a>
-            <a href="#" onclick="showSection('otzyvy')">ОТЗЫВЫ</a>
-            <a href="#" onclick="showSection('onas')">О НАС</a>
-            <a href="#" onclick="showSection('oplata')">ОПЛАТА</a>
-            <a href="#" onclick="showSection('kontakty')">КОНТАКТЫ</a>
-        </nav>
-    </header>
+  <header>
+    <h1 id="homeBtn">Кухни от Ховрина</h1>
+    <nav>
+      <a href="#mebel">МЕБЕЛЬ</a>
+      <a href="#akcii">АКЦИИ</a>
+      <a href="#garantiya">ГАРАНТИЯ</a>
+      <a href="#otzyvy">ОТЗЫВЫ</a>
+      <a href="#onas">О НАС</a>
+      <a href="#oplata">ОПЛАТА</a>
+      <a href="#kontakty">КОНТАКТЫ</a>
+    </nav>
+  </header>
 
-    <section id="mebel" class="active">
-        <h2>Кухни под заказ</h2>
-        <p>Проектируем кухни в стиле модерн, лофт, классика и др. Индивидуальный подход и замер бесплатно.</p>
-    </section>
-    <section id="akcii">
-        <h2>Акции</h2>
-        <p>Скидки до 60% на кухню месяца. Успейте заказать!</p>
-    </section>
-    <section id="garantiya">
-        <h2>Гарантия</h2>
-        <p>3 года гарантии на все кухни. Качественные материалы и фурнитура.</p>
-    </section>
-    <section id="otzyvy">
-        <h2>Отзывы</h2>
-        <p>Тысячи довольных клиентов по всей России. Читайте реальные отзывы.</p>
-    </section>
-    <section id="onas">
-        <h2>О нас</h2>
-        <p>Наша компания занимается кухнями на заказ более 10 лет. Надёжность и стиль — наш приоритет.</p>
-    </section>
-    <section id="oplata">
-        <h2>Оплата</h2>
-        <p>Наличные, карты, рассрочка и онлайн-платежи. Удобно для вас.</p>
-    </section>
-    <section id="kontakty">
-        <h2>Контакты</h2>
-        <p>Свяжитесь с нами по телефону +7 999 123-45-67 или приходите в наш салон.</p>
-    </section>
+  <section id="home" class="hero active">
+    <h2>Качество и стиль вашего интерьера</h2>
+  </section>
+  <section id="mebel"><h2>Мебель</h2><p>Описание мебели</p></section>
+  <section id="akcii"><h2>Акции</h2><p>Скидки на кухни до 60%</p></section>
+  <section id="garantiya"><h2>Гарантия</h2><p>Гарантия на все кухни — 3 года</p></section>
+  <section id="otzyvy"><h2>Отзывы</h2><p>Отзывы наших клиентов</p></section>
+  <section id="onas"><h2>О нас</h2><p>Фабрика мебели с 10-летним опытом</p></section>
+  <section id="oplata"><h2>Оплата</h2><p>Удобная рассрочка без переплат</p></section>
+  <section id="kontakty"><h2>Контакты</h2><p>+7 999 123-45-67</p></section>
 
-    <script>
-        function showSection(id) {
-            document.querySelectorAll('section').forEach(section => {
-                section.classList.remove('active');
-            });
-            document.getElementById(id).classList.add('active');
-        }
-    </script>
+  <button class="designer-btn" onclick="toggleForm()">Вызвать дизайнера</button>
+  <div class="designer-form" id="designerForm">
+    <input type="text" placeholder="Ваше имя" />
+    <input type="tel" placeholder="Телефон" />
+    <textarea rows="3" placeholder="Комментарий"></textarea>
+    <button>Отправить</button>
+  </div>
+
+  <a class="floating-contact" href="https://t.me" title="Связаться" target="_blank">💬</a>
+
+  <script>
+    const navLinks = document.querySelectorAll("nav a");
+    const sections = document.querySelectorAll("section");
+    const homeBtn = document.getElementById("homeBtn");
+    const formBlock = document.getElementById("designerForm");
+
+    function showSection(id) {
+      sections.forEach(s => s.classList.remove("active"));
+      document.querySelector(id).classList.add("active");
+      navLinks.forEach(link => link.classList.remove("active"));
+      const match = Array.from(navLinks).find(link => link.getAttribute("href") === id);
+      if (match) match.classList.add("active");
+      window.scrollTo(0, 0);
+    }
+
+    navLinks.forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        showSection(link.getAttribute("href")); 
+      });
+    });
+
+    homeBtn.addEventListener("click", () => {
+      sections.forEach(s => s.classList.add("active")); 
+      window.scrollTo(0, 0);
+    });
+
+    function toggleForm() {
+      formBlock.style.display = formBlock.style.display === 'block' ? 'none' : 'block';
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("active");
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
 </body>
 </html>
