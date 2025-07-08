@@ -8,15 +8,17 @@
   <style>
     body { margin: 0; font-family: 'Segoe UI', sans-serif; color: #fff; background: #111; scroll-behavior: smooth; }
     header { background: #111; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #333; }
-    nav a { color: #fff; margin: 0 12px; text-decoration: none; font-weight: 500; }
+    nav a { color: #fff; margin: 0 12px; text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
     nav a:hover { color: #e60038; }
-    .section { padding: 60px 20px; max-width: 1200px; margin: auto; }
+    .brand { font-weight: bold; color: #e60038; font-size: 18px; cursor: pointer; text-decoration: none; }
+    .section { padding: 80px 20px; max-width: 1200px; margin: auto; opacity: 0; transform: translateY(30px); transition: opacity 1s ease, transform 1s ease; }
+    .visible { opacity: 1; transform: translateY(0); }
     h1, h2 { color: #e60038; text-align: center; }
     .grid { display: grid; gap: 30px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-top: 30px; }
     .card { background: #1a1a1a; border-radius: 8px; overflow: hidden; }
     .card img { width: 100%; height: auto; display: block; }
     .card-content { padding: 15px; }
-    p { line-height: 1.6; }
+    p { line-height: 1.6; text-align: center; max-width: 900px; margin: auto; }
     form { max-width: 500px; margin: auto; display: flex; flex-direction: column; gap: 15px; margin-top: 30px; }
     input, textarea { padding: 12px; font-size: 16px; border: none; border-radius: 4px; }
     button { padding: 12px; background: #e60038; color: #fff; font-size: 16px; border: none; border-radius: 4px; cursor: pointer; }
@@ -26,7 +28,7 @@
 <body>
 
 <header>
-  <div><strong>Кухни от Ховрина</strong></div>
+  <a href="#top" class="brand">Кухни от Ховрина</a>
   <nav>
     <a href="#mebel">МЕБЕЛЬ</a>
     <a href="#akcii">АКЦИИ</a>
@@ -38,79 +40,92 @@
   </nav>
 </header>
 
-<section class="section" id="mebel">
-  <h1>Кухни под заказ</h1>
-  <p style="text-align:center;max-width:800px;margin:auto;">Проектирование, изготовление и установка кухонь под ваш стиль и пространство. Стиль модерн, лофт, классика и другие.</p>
-  <div class="grid">
-    <div class="card">
-      <img src="https://mebelvdomufa.ru/wp-content/uploads/2022/11/kuhnya-2023-6.jpg">
-      <div class="card-content"><strong>Модерн</strong><br>Прямые линии, лаконичные формы, глянец.</div>
+<main id="top">
+  <section class="section" id="mebel">
+    <h1>Кухни под заказ</h1>
+    <p>Проектируем и изготавливаем кухни любой сложности под стиль, пространство и бюджет. Модерн, лофт, классика и др.</p>
+    <div class="grid">
+      <div class="card">
+        <img src="https://mebelvdomufa.ru/wp-content/uploads/2022/11/kuhnya-2023-6.jpg">
+        <div class="card-content"><strong>Модерн</strong><br>Прямые линии, лаконичные формы, глянец.</div>
+      </div>
+      <div class="card">
+        <img src="https://cdn21vek.by/img/galleries/7989/preview_b/kuhni_v_stile_loft.jpg">
+        <div class="card-content"><strong>Лофт</strong><br>Дерево, металл, индустриальный стиль.</div>
+      </div>
+      <div class="card">
+        <img src="https://www.kuhni-nsk.ru/upload/iblock/1e5/1e5705f3d5a2d364e03b017a9fbb05fb.jpg">
+        <div class="card-content"><strong>Классика</strong><br>Светлые фасады, фрезеровка, уют.</div>
+      </div>
     </div>
-    <div class="card">
-      <img src="https://cdn21vek.by/img/galleries/7989/preview_b/kuhni_v_stile_loft.jpg">
-      <div class="card-content"><strong>Лофт</strong><br>Дерево, металл, индустриальный стиль.</div>
+  </section>
+
+  <section class="section" id="akcii">
+    <h2>Акции</h2>
+    <p>Скидка до 60% на заказ кухни до конца месяца. Замер и дизайн — бесплатно.</p>
+  </section>
+
+  <section class="section" id="garantiya">
+    <h2>Гарантия</h2>
+    <p>На все кухни предоставляется гарантия 3 года. Качественные материалы, проверенные механизмы, профессиональная сборка.</p>
+  </section>
+
+  <section class="section" id="otzyvy">
+    <h2>Отзывы</h2>
+    <div class="grid">
+      <div class="card-content" style="background:#1a1a1a;border-radius:8px;">
+        <strong>Анна, Казань</strong><br>
+        Очень довольна результатом. Сделали всё как просила, кухня стильная и удобная!
+      </div>
+      <div class="card-content" style="background:#1a1a1a;border-radius:8px;">
+        <strong>Михаил, Екатеринбург</strong><br>
+        Приехали, замерили, показали 3D — уже через 2 недели кухня была у нас. Спасибо!
+      </div>
     </div>
-    <div class="card">
-      <img src="https://www.kuhni-nsk.ru/upload/iblock/1e5/1e5705f3d5a2d364e03b017a9fbb05fb.jpg">
-      <div class="card-content"><strong>Классика</strong><br>Светлые фасады, фрезеровка, уют.</div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="section" id="akcii">
-  <h2>Акции</h2>
-  <p style="text-align:center;">Скидка до 60% на заказ кухни до конца месяца. Замер и дизайн — бесплатно.</p>
-</section>
+  <section class="section" id="onas">
+    <h2>О нас</h2>
+    <p>«Кухни от Ховрина» — это команда, которая создаёт кухни с душой. Наша цель — создать не просто мебель, а пространство, в котором вам будет приятно жить.</p>
+  </section>
 
-<section class="section" id="garantiya">
-  <h2>Гарантия</h2>
-  <p style="text-align:center;max-width:800px;margin:auto;">На все кухни предоставляется гарантия 3 года. Используем качественные материалы, проверенные механизмы, современное оборудование.</p>
-</section>
+  <section class="section" id="oplata">
+    <h2>Оплата</h2>
+    <p>Принимаем оплату наличными, банковской картой, онлайн-переводом. Доступна рассрочка без переплат.</p>
+  </section>
 
-<section class="section" id="otzyvy">
-  <h2>Отзывы</h2>
-  <div class="grid">
-    <div class="card-content" style="background:#1a1a1a;border-radius:8px;">
-      <strong>Анна, г. Казань</strong><br>
-      Кухня получилась отличной! Учли все пожелания, монтаж выполнили быстро. Рекомендую!
-    </div>
-    <div class="card-content" style="background:#1a1a1a;border-radius:8px;">
-      <strong>Михаил, г. Екатеринбург</strong><br>
-      Очень доволен качеством фасадов и сборки. Дизайнер подсказал интересное решение.
-    </div>
-  </div>
-</section>
-
-<section class="section" id="onas">
-  <h2>О нас</h2>
-  <p style="text-align:center;max-width:800px;margin:auto;">
-    «Кухни от Ховрина» — команда, которая создаёт кухни, сочетающие стиль, функциональность и индивидуальность. Мы не просто собираем мебель, а воплощаем образы, которые отражают вкус и привычки наших клиентов.
-  </p>
-</section>
-
-<section class="section" id="oplata">
-  <h2>Оплата</h2>
-  <p style="text-align:center;max-width:800px;margin:auto;">Вы можете оплатить заказ наличными, банковской картой, онлайн-переводом или оформить рассрочку без переплат.</p>
-</section>
-
-<section class="section" id="kontakty">
-  <h2>Контакты</h2>
-  <p style="text-align:center;">
-    Телефон: +7 (999) 123-45-67<br>
-    Email: info@khovrin-kitchens.ru<br>
-    Telegram / WhatsApp: @khovrin_kitchen
-  </p>
-  <form>
-    <input type="text" placeholder="Ваше имя" required>
-    <input type="tel" placeholder="Телефон для связи" required>
-    <textarea placeholder="Комментарий или пожелание" rows="4"></textarea>
-    <button type="submit">Оставить заявку</button>
-  </form>
-</section>
+  <section class="section" id="kontakty">
+    <h2>Контакты</h2>
+    <p>
+      Телефон: +7 (999) 123-45-67<br>
+      Email: info@khovrin-kitchens.ru<br>
+      Telegram / WhatsApp: @khovrin_kitchen
+    </p>
+    <form>
+      <input type="text" placeholder="Ваше имя" required>
+      <input type="tel" placeholder="Телефон для связи" required>
+      <textarea placeholder="Комментарий или пожелание" rows="4"></textarea>
+      <button type="submit">Оставить заявку</button>
+    </form>
+  </section>
+</main>
 
 <footer>
   © 2025 Кухни от Ховрина. Все права защищены.
 </footer>
+
+<script>
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  sections.forEach(section => observer.observe(section));
+</script>
 
 </body>
 </html>
