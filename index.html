@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -31,7 +32,6 @@
       font-weight: 600;
       margin: 0 15px;
       transition: color 0.3s;
-      cursor: pointer;
     }
     header a:hover {
       color: #f50057;
@@ -74,90 +74,26 @@
     .button-main:hover {
       background-color: #d4004a;
     }
-    section {
-      display: none;
-      padding: 80px 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    section.active {
-      display: block;
-      animation: fadeIn 0.8s ease-in-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
   </style>
-  <script>
-    function showSection(id) {
-      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-    function showAllSections() {
-      document.querySelectorAll('section').forEach(sec => sec.classList.add('active'));
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-    window.onload = () => {
-      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
-      document.getElementById('hero').classList.add('active');
-    }
-  </script>
 </head>
 <body>
   <header>
-    <div style="font-size: 20px; font-weight: bold; color: #f50057; cursor: pointer;" onclick="showAllSections()">Кухни от Ховрина</div>
+    <div style="font-size: 20px; font-weight: bold; color: #f50057; cursor: pointer;" onclick="location.href='index.html'">Кухни от Ховрина</div>
     <nav>
-      <a onclick="showSection('mebel')">Мебель</a>
-      <a onclick="showSection('akcii')">Акции</a>
-      <a onclick="showSection('garantiya')">Гарантия</a>
-      <a onclick="showSection('otzyvy')">Отзывы</a>
-      <a onclick="showSection('onas')">О нас</a>
-      <a onclick="showSection('oplata')">Оплата</a>
-      <a onclick="showSection('kontakty')">Контакты</a>
+      <a href="#mebel">Мебель</a>
+      <a href="#akcii">Акции</a>
+      <a href="#garantiya">Гарантия</a>
+      <a href="#otzyvy">Отзывы</a>
+      <a href="#onas">О нас</a>
+      <a href="#oplata">Оплата</a>
+      <a href="#kontakty">Контакты</a>
     </nav>
   </header>
 
-  <section class="hero" id="hero">
+  <section class="hero">
     <h1>Качество и стиль вашего интерьера</h1>
     <p>Собственная мебельная фабрика позволяет быть уверенными в качестве мебели. Оптимизация производственных процессов, отсутствие шоу-румов и работа в одном регионе без подрядчиков помогает удерживать цены ниже средних.</p>
     <button class="button-main">Вызвать дизайнера</button>
-  </section>
-
-  <section id="mebel">
-    <h2>Мебель</h2>
-    <p>Изготавливаем кухни под заказ в стилях: модерн, классика, лофт, хай-тек и других. Индивидуальный подход, визуализация 3D, подбор цвета и материалов на дому.</p>
-  </section>
-
-  <section id="akcii">
-    <h2>Акции</h2>
-    <p>🔥 Летняя распродажа! До -60% на кухни. Бесплатный замер и 3D проект. Рассрочка 0% на 12 месяцев.</p>
-  </section>
-
-  <section id="garantiya">
-    <h2>Гарантия</h2>
-    <p>Мы предоставляем официальную гарантию 2 года. Все изделия сопровождаются договором и сертификатами качества.</p>
-  </section>
-
-  <section id="otzyvy">
-    <h2>Отзывы</h2>
-    <p>98% довольных клиентов рекомендуют нас друзьям. Реальные отзывы на Яндекс и Google. Мы ценим каждое мнение.</p>
-  </section>
-
-  <section id="onas">
-    <h2>О нас</h2>
-    <p>«Кухни от Ховрина» — это производственная мебельная компания с более чем 10-летним опытом. Мы делаем кухни, которые радуют глаз и служат годами.</p>
-  </section>
-
-  <section id="oplata">
-    <h2>Оплата</h2>
-    <p>Оплата по безналичному расчету, наличными или в рассрочку. Онлайн-платежи через защищённый шлюз. Работаем по договору.</p>
-  </section>
-
-  <section id="kontakty">
-    <h2>Контакты</h2>
-    <p>📍 Москва, ул. Примерная, 12<br>📞 +7 (495) 123-45-67<br>📧 info@hovrin.ru<br>Telegram | VK | WhatsApp</p>
   </section>
 </body>
 </html>
